@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+/* src/styles.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Se precisar de estilos globais além do Tailwind, adicione aqui */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: sans-serif; /* Ou a fonte que escolher para o site */
+  background-color: var(--xfood-white); /* Usando uma das cores definidas */
+}

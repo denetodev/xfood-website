@@ -1,0 +1,255 @@
+<section class="py-16 bg-xfood-white">
+  <div class="container mx-auto px-4 text-center">
+    <h1 class="text-4xl md:text-5xl font-extrabold text-xfood-gray-dark mb-6">
+      Pronto para Alavancar seu Delivery?
+    </h1>
+    <p
+      class="text-lg md:text-xl text-xfood-gray-medium max-w-3xl mx-auto mb-12"
+    >
+      Fale com a XFood e descubra como podemos transformar seu negócio no iFood,
+      aumentando suas vendas e lucros. Preencha o formulário abaixo ou entre em
+      contato diretamente.
+    </p>
+
+    <div
+      class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start max-w-6xl mx-auto"
+    >
+      <div
+        class="bg-xfood-off-white p-8 md:p-10 rounded-lg shadow-lg border border-xfood-gray-lightest text-left"
+      >
+        <h2 class="text-2xl md:text-3xl font-bold text-xfood-gray-dark mb-8">
+          Envie sua Mensagem ou Agende sua Análise
+        </h2>
+        <form
+          [formGroup]="contactForm"
+          (ngSubmit)="onSubmit()"
+          class="space-y-6"
+        >
+          <div>
+            <label
+              for="name"
+              class="block text-xfood-gray-medium text-sm font-semibold mb-2"
+              >Seu Nome Completo *</label
+            >
+            <input
+              type="text"
+              id="name"
+              formControlName="name"
+              class="w-full p-3 border border-xfood-gray-lightest rounded-md focus:outline-none focus:ring-2 focus:ring-xfood-red-medium bg-xfood-white-pure text-xfood-gray-dark"
+              placeholder="Seu nome"
+            />
+            <div
+              *ngIf="
+                contactForm.get('name')?.invalid &&
+                contactForm.get('name')?.touched
+              "
+              class="text-xfood-red-light text-sm mt-1"
+            >
+              Nome é obrigatório.
+            </div>
+          </div>
+          <div>
+            <label
+              for="email"
+              class="block text-xfood-gray-medium text-sm font-semibold mb-2"
+              >Seu E-mail *</label
+            >
+            <input
+              type="email"
+              id="email"
+              formControlName="email"
+              class="w-full p-3 border border-xfood-gray-lightest rounded-md focus:outline-none focus:ring-2 focus:ring-xfood-red-medium bg-xfood-white-pure text-xfood-gray-dark"
+              placeholder="seu.email@exemplo.com"
+            />
+            <div
+              *ngIf="
+                contactForm.get('email')?.invalid &&
+                contactForm.get('email')?.touched
+              "
+              class="text-xfood-red-light text-sm mt-1"
+            >
+              Por favor, insira um e-mail válido.
+            </div>
+          </div>
+          <div>
+            <label
+              for="phone"
+              class="block text-xfood-gray-medium text-sm font-semibold mb-2"
+              >Seu WhatsApp *</label
+            >
+            <input
+              type="text"
+              id="phone"
+              formControlName="phone"
+              class="w-full p-3 border border-xfood-gray-lightest rounded-md focus:outline-none focus:ring-2 focus:ring-xfood-red-medium bg-xfood-white-pure text-xfood-gray-dark"
+              placeholder="(XX) XXXXX-XXXX"
+            />
+            <div
+              *ngIf="
+                contactForm.get('phone')?.invalid &&
+                contactForm.get('phone')?.touched
+              "
+              class="text-xfood-red-light text-sm mt-1"
+            >
+              Telefone/WhatsApp é obrigatório.
+            </div>
+          </div>
+          <div>
+            <label
+              for="restaurantName"
+              class="block text-xfood-gray-medium text-sm font-semibold mb-2"
+              >Nome do seu Restaurante/Loja *</label
+            >
+            <input
+              type="text"
+              id="restaurantName"
+              formControlName="restaurantName"
+              class="w-full p-3 border border-xfood-gray-lightest rounded-md focus:outline-none focus:ring-2 focus:ring-xfood-red-medium bg-xfood-white-pure text-xfood-gray-dark"
+              placeholder="Nome do seu negócio"
+            />
+            <div
+              *ngIf="
+                contactForm.get('restaurantName')?.invalid &&
+                contactForm.get('restaurantName')?.touched
+              "
+              class="text-xfood-red-light text-sm mt-1"
+            >
+              Nome do restaurante é obrigatório.
+            </div>
+          </div>
+          <div>
+            <label
+              for="message"
+              class="block text-xfood-gray-medium text-sm font-semibold mb-2"
+              >Sua Mensagem (Opcional)</label
+            >
+            <textarea
+              id="message"
+              formControlName="message"
+              rows="4"
+              class="w-full p-3 border border-xfood-gray-lightest rounded-md focus:outline-none focus:ring-2 focus:ring-xfood-red-medium bg-xfood-white-pure text-xfood-gray-dark"
+              placeholder="Conte-nos um pouco sobre seu negócio e seus desafios..."
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            [disabled]="contactForm.invalid"
+            class="w-full bg-xfood-red-medium hover:bg-xfood-red-light text-xfood-white-pure text-xl font-bold px-8 py-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            Enviar Mensagem
+          </button>
+        </form>
+      </div>
+
+      <div
+        class="bg-xfood-gray-dark p-8 md:p-10 rounded-lg shadow-lg text-xfood-white-pure text-left"
+      >
+        <h2 class="text-2xl md:text-3xl font-bold mb-8">
+          Ou Fale Conosco Diretamente:
+        </h2>
+        <div class="space-y-6">
+          <div class="flex items-center">
+            <img
+              src="assets/icons/whatsapp.svg"
+              alt="WhatsApp Icon"
+              class="h-8 w-8 mr-4 flex-shrink-0"
+            />
+            <div>
+              <p class="text-xfood-gray-light text-sm">WhatsApp</p>
+              <a
+                href="https://wa.me/5561983179864"
+                target="_blank"
+                class="text-2xl font-bold hover:text-xfood-red-light transition-colors duration-300"
+                >(61) 98317-9864</a
+              >
+            </div>
+          </div>
+          <div class="flex items-center">
+            <svg
+              class="h-8 w-8 mr-4 flex-shrink-0 text-xfood-white-pure"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-6 9h6a2 2 0 002-2V7a2 2 0 00-2-2H3a2 2 0 00-2 2v10a2 2 0 002 2h6m0-12v6m0-6h6m-6 0h6"
+              ></path>
+            </svg>
+            <div>
+              <p class="text-xfood-gray-light text-sm">E-mail</p>
+              <a
+                href="mailto:consultoriaxfood@gmail.com"
+                class="text-xl font-bold hover:text-xfood-red-light transition-colors duration-300"
+                >consultoriaxfood&#64;gmail.com</a
+              >
+            </div>
+          </div>
+          <div class="flex items-center">
+            <svg
+              class="h-8 w-8 mr-4 flex-shrink-0 text-xfood-white-pure"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+            <div>
+              <p class="text-xfood-gray-light text-sm">
+                Horário de Atendimento
+              </p>
+              <p class="text-xl font-bold">Segunda a Sexta-feira</p>
+              <p class="text-xl font-bold">
+                08:00 às 18:00 (Horário de Brasília)
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-xfood-off-white">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-xfood-gray-dark mb-8">
+      Onde Estamos
+    </h2>
+    <p class="text-lg text-xfood-gray-medium max-w-2xl mx-auto mb-8">
+      A XFood atende todo o Brasil de forma remota, mas se desejar conhecer
+      nosso escritório (apenas com agendamento prévio):
+    </p>
+    <div
+      class="bg-xfood-white-pure rounded-lg shadow-lg overflow-hidden border border-xfood-gray-lightest max-w-4xl mx-auto"
+    >
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3839.299538330752!2d-47.88607108518596!3d-15.77977468904797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a242c7f2c69c5%3A0xc3c5d6f3e5b3b3b!2sBras%C3%ADlia%2C%20DF!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"
+        width="100%"
+        height="450"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      >
+      </iframe>
+      <div class="p-6 text-left">
+        <h3 class="text-xl font-bold text-xfood-gray-dark mb-2">
+          Endereço XFood (Escritório Central)
+        </h3>
+        <p class="text-xfood-gray-medium">
+          [Seu Endereço Aqui - Ex: SAUS Q. 5 Bl. K, Asa Sul, Brasília - DF,
+          70070-050]
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
