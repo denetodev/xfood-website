@@ -4,14 +4,80 @@
 </main>
 <app-footer></app-footer>
 
-<a
-  href="https://wa.me/5561983179864"
-  target="_blank"
-  class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110 z-50 flex items-center justify-center space-x-2 md:w-auto md:px-6"
+<!-- Botão WhatsApp fixo com tooltip expansível -->
+<div
+  class="whatsapp-container fixed bottom-6 right-6 z-50"
+  [class.expanded]="isTooltipVisible"
 >
-  <img
-    src="assets/icons/whatsapp.svg"
-    alt="WhatsApp"
-    class="h-8 w-8 text-white"
-  />
-</a>
+  <!-- Container do botão com tooltip -->
+  <div class="relative flex items-center">
+    <!-- Tooltip expansível -->
+    <div
+      class="tooltip-content flex items-center bg-xfood-gray-dark text-xfood-white text-sm font-medium rounded-full shadow-2xl border border-xfood-gray-medium overflow-hidden transition-all duration-500 ease-out"
+      [class.show]="isTooltipVisible"
+    >
+      <!-- Conteúdo do tooltip -->
+      <div class="flex items-center px-4 py-3 space-x-3 whitespace-nowrap">
+        <div class="flex-shrink-0">
+          <div class="w-2 h-2 bg-xfood-green rounded-full animate-pulse"></div>
+        </div>
+        <div>
+          <p class="font-semibold text-xfood-white">Precisa de ajuda?</p>
+          <p class="text-xs text-xfood-gray-lighter">
+            Fale conosco pelo WhatsApp
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Botão principal -->
+    <a
+      href="https://wa.me/5561983179864?text=Olá!%20Vim%20do%20site%20da%20XFood%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20serviços."
+      target="_blank"
+      rel="noopener noreferrer"
+      class="whatsapp-button group relative flex items-center justify-center bg-gradient-to-br from-xfood-green via-green-500 to-green-600 hover:from-green-600 hover:via-green-500 hover:to-xfood-green text-white shadow-2xl transition-all duration-300 ease-out transform hover:scale-110 active:scale-95 ml-3"
+      aria-label="Conversar no WhatsApp"
+      title="Fale conosco pelo WhatsApp"
+      (mouseenter)="showTooltip()"
+      (mouseleave)="hideTooltip()"
+      (click)="onWhatsAppClick()"
+    >
+      <!-- Ícone do WhatsApp -->
+      <img
+        src="assets/icons/whatsapp.svg"
+        alt="WhatsApp"
+        class="h-8 w-8 filter brightness-0 invert transition-all duration-300 group-hover:scale-110 group-hover:rotate-12"
+      />
+
+      <!-- Efeito de pulso -->
+      <div
+        class="absolute inset-0 rounded-full bg-xfood-green opacity-20 animate-ping"
+      ></div>
+
+      
+      <!-- Partículas decorativas -->
+      <div class="absolute inset-0 rounded-full overflow-hidden">
+        <div
+          class="absolute top-2 left-2 w-1 h-1 bg-white opacity-60 rounded-full animate-bounce"
+          style="animation-delay: 0.2s"
+        ></div>
+        <div
+          class="absolute bottom-3 right-3 w-0.5 h-0.5 bg-white opacity-40 rounded-full animate-bounce"
+          style="animation-delay: 0.8s"
+        ></div>
+        <div
+          class="absolute top-4 right-2 w-0.5 h-0.5 bg-white opacity-50 rounded-full animate-bounce"
+          style="animation-delay: 1.2s"
+        ></div>
+      </div>
+    </a>
+
+    <!-- Badge de notificação (opcional) -->
+    <div
+      class="notification-badge absolute -top-2 -right-2 flex items-center justify-center w-6 h-6 bg-gradient-to-r from-xfood-red-medium to-red-500 text-white text-xs font-bold rounded-full shadow-lg transform scale-0 transition-transform duration-300"
+      [class.scale-100]="hasNotification"
+    >
+      <span class="animate-pulse">•</span>
+    </div>
+  </div>
+</div>

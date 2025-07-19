@@ -1,88 +1,81 @@
-/* Animações personalizadas */
-@keyframes fadeInDown {
+/* Custom styles for navigation links */
+.nav-link:hover .nav-indicator {
+  @apply w-full;
+}
+
+.nav-link.active {
+  @apply text-white;
+}
+
+.nav-link.active .nav-indicator {
+  @apply w-full opacity-100;
+}
+
+/* Mobile navigation active state */
+.mobile-nav-link.mobile-active {
+  @apply text-white bg-gradient-to-r from-red-600/20 to-red-700/20 border-l-4 border-red-500;
+}
+
+/* Smooth scrolling and backdrop blur enhancement */
+header {
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(31, 41, 55, 0.3);
+}
+
+/* Enhanced mobile menu animations */
+@media (max-width: 1024px) {
+  .mobile-menu-overlay {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+
+  .mobile-menu {
+    box-shadow: -10px 0 25px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Improved focus states for accessibility */
+.nav-link:focus,
+.mobile-nav-link:focus {
+  @apply outline-none ring-2 ring-red-500 ring-opacity-50 rounded-lg;
+}
+
+/* Custom scrollbar for mobile menu */
+.mobile-menu-content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.mobile-menu-content::-webkit-scrollbar-track {
+  background: rgba(31, 41, 55, 0.1);
+}
+
+.mobile-menu-content::-webkit-scrollbar-thumb {
+  background: rgba(239, 68, 68, 0.3);
+  border-radius: 2px;
+}
+
+.mobile-menu-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(239, 68, 68, 0.5);
+}
+
+/* Subtle animations for better UX */
+@keyframes slideInFromRight {
   from {
+    transform: translateX(100%);
     opacity: 0;
-    transform: translateY(-10px);
   }
   to {
+    transform: translateX(0);
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
-@keyframes pulse {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
+.mobile-menu.open {
+  animation: slideInFromRight 0.3s ease-out;
 }
 
-/* Efeito de brilho no logo */
-.brightness-110 {
-  filter: brightness(1.1) contrast(1.1);
-}
-
-/* Animação do menu mobile */
-.mobile-menu-enter {
-  animation: fadeInDown 0.3s ease-out forwards;
-}
-
-/* Efeito de hover no botão CTA */
-.cta-button:hover {
-  animation: pulse 0.6s ease-in-out infinite;
-}
-
-/* Backdrop blur para o menu mobile */
-.mobile-menu-backdrop {
-  backdrop-filter: blur(10px);
-  background: rgba(0, 0, 0, 0.5);
-}
-
-/* Estilo para links ativos */
-.router-link-active {
-  color: #ef4444 !important;
-  font-weight: 600;
-}
-
-.router-link-active .absolute {
-  width: 100% !important;
-}
-
-/* Responsividade adicional */
-@media (max-width: 768px) {
-  .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-}
-
-@media (max-width: 640px) {
-  .container {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-  }
-}
-
-/* Smooth scrolling para âncoras */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Foco acessível */
-button:focus,
-a:focus {
-  outline: 2px solid #ef4444;
-  outline-offset: 2px;
-}
-
-/* Transições suaves globais */
-* {
-  transition-property: color, background-color, border-color,
-    text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
-    backdrop-filter;
-  transition-duration: 150ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+/* Logo hover effect enhancement */
+.logo-container:hover img {
+  filter: brightness(1.25) drop-shadow(0 0 10px rgba(239, 68, 68, 0.3));
 }

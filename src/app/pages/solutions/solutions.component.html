@@ -1,40 +1,449 @@
-<section class="py-16 bg-xfood-white">
-  <div class="container mx-auto px-4 text-center">
-    <h1 class="text-4xl md:text-5xl font-extrabold text-xfood-gray-dark mb-6">
-      Soluções XFood: Estratégias que Impulsionam seu Delivery no iFood
-    </h1>
-    <p class="text-lg md:text-xl text-xfood-gray-medium max-w-3xl mx-auto mb-12">
-      Transformamos desafios em oportunidades. Com a XFood, seu restaurante ganha visibilidade, otimiza operações e multiplica lucros no maior marketplace de delivery do Brasil.
-    </p>
+<!-- Hero Section -->
+<section
+  class="relative min-h-screen bg-gradient-to-br from-xfood-gray-dark via-xfood-black to-xfood-gray-medium overflow-hidden"
+>
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-5">
+    <div
+      class="absolute top-10 left-10 w-32 h-32 bg-xfood-red-medium rounded-full blur-3xl"
+    ></div>
+    <div
+      class="absolute top-1/3 right-20 w-48 h-48 bg-xfood-orange rounded-full blur-3xl"
+    ></div>
+    <div
+      class="absolute bottom-20 left-1/4 w-40 h-40 bg-xfood-green rounded-full blur-3xl"
+    ></div>
+  </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-      <div *ngFor="let solution of solutions" class="bg-xfood-white-pure p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 border border-xfood-gray-lightest flex flex-col items-center text-center">
-        <img [src]="solution.icon" [alt]="solution.title" class="h-20 w-20 mb-6 flex-shrink-0">
-        <h3 class="text-2xl font-semibold text-xfood-gray-dark mb-4">{{ solution.title }}</h3>
-        <p class="text-xfood-gray-medium leading-relaxed">{{ solution.description }}</p>
+  <div
+    class="relative container mx-auto px-4 py-20 flex items-center min-h-screen"
+  >
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+      <!-- Content -->
+      <div class="text-center lg:text-left space-y-8">
+        <div class="space-y-6">
+          <h1
+            class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-xfood-white-pure leading-tight"
+          >
+            Multiplique seus
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-xfood-red-accent to-xfood-orange"
+              >Lucros</span
+            >
+            no iFood
+          </h1>
+
+          <p
+            class="text-xl md:text-2xl text-xfood-gray-lighter leading-relaxed max-w-2xl mx-auto lg:mx-0"
+          >
+            Transformamos restaurantes em máquinas de vendas no delivery.
+            <span class="text-xfood-orange font-semibold"
+              >Resultados comprovados em 30 dias.</span
+            >
+          </p>
+        </div>
+
+        <!-- Stats -->
+        <div class="flex flex-wrap justify-center lg:justify-start gap-6 py-8">
+          <div class="text-center">
+            <div class="text-3xl font-bold text-xfood-red-accent">+300%</div>
+            <div class="text-sm text-xfood-gray-lighter">Aumento Médio</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-xfood-green">+150</div>
+            <div class="text-sm text-xfood-gray-lighter">Clientes Ativos</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-xfood-orange">98%</div>
+            <div class="text-sm text-xfood-gray-lighter">Satisfação</div>
+          </div>
+        </div>
+
+        <!-- CTAs -->
+        <div
+          class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+        >
+          <a
+            routerLink="/contato"
+            class="group relative bg-gradient-to-r from-xfood-red-medium to-xfood-red-accent text-xfood-white-pure text-lg font-bold px-8 py-4 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xfood-red-medium/50"
+          >
+            <span class="relative z-10">Análise Gratuita</span>
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-xfood-red-accent to-xfood-red-vibrant rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            ></div>
+          </a>
+
+          <a
+            routerLink="/resultados"
+            class="border-2 border-xfood-gray-lighter text-xfood-white-pure text-lg font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:bg-xfood-white-pure hover:text-xfood-gray-dark"
+          >
+            Ver Casos de Sucesso
+          </a>
+        </div>
+      </div>
+
+      <!-- Visual Element -->
+      <div class="relative lg:block">
+        <div class="relative mx-auto max-w-md">
+          <!-- Main Card -->
+          <div
+            class="bg-gradient-to-br from-xfood-white-pure to-xfood-off-white p-8 rounded-3xl shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500"
+          >
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <img
+                  src="assets/images/xfood-logo.png"
+                  alt="XFood"
+                  class="h-8"
+                />
+                <div class="flex space-x-1">
+                  <div
+                    class="w-2 h-2 bg-xfood-green rounded-full animate-pulse"
+                  ></div>
+                  <div
+                    class="w-2 h-2 bg-xfood-orange rounded-full animate-pulse delay-150"
+                  ></div>
+                  <div
+                    class="w-2 h-2 bg-xfood-red-accent rounded-full animate-pulse delay-300"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="space-y-3">
+                <div class="flex justify-between text-sm">
+                  <span class="text-xfood-gray-medium">Vendas Hoje</span>
+                  <span class="text-xfood-green font-bold">+45%</span>
+                </div>
+                <div class="bg-xfood-gray-lightest rounded-full h-2">
+                  <div
+                    class="bg-gradient-to-r from-xfood-green to-xfood-orange h-2 rounded-full w-3/4 animate-pulse"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-4 mt-6">
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-xfood-gray-dark">
+                    R$ 3.2K
+                  </div>
+                  <div class="text-xs text-xfood-gray-medium">Hoje</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-xfood-gray-dark">127</div>
+                  <div class="text-xs text-xfood-gray-medium">Pedidos</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Elements -->
+          <div
+            class="absolute -top-4 -left-4 bg-xfood-green p-3 rounded-full shadow-lg animate-bounce"
+          >
+            <svg
+              class="w-6 h-6 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+              ></path>
+            </svg>
+          </div>
+
+          <div
+            class="absolute -bottom-4 -right-4 bg-xfood-orange p-3 rounded-full shadow-lg animate-bounce delay-300"
+          >
+            <svg
+              class="w-6 h-6 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
+              ></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div
+    class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
+  >
+    <svg
+      class="w-6 h-6 text-xfood-gray-lighter"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M19 14l-7 7m0 0l-7-7m7 7V3"
+      ></path>
+    </svg>
+  </div>
+</section>
+
+<!-- Services Preview Section -->
+<section class="py-20 bg-xfood-gray-dark">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-xfood-white-pure mb-6">
+        Como Impulsionamos seu
+        <span
+          class="text-transparent bg-clip-text bg-gradient-to-r from-xfood-red-accent to-xfood-orange"
+          >Delivery</span
+        >
+      </h2>
+      <p class="text-xl text-xfood-gray-lighter max-w-3xl mx-auto">
+        Estratégias comprovadas que transformam seu restaurante em líder de
+        vendas no iFood
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div
+        *ngFor="let service of services; let i = index"
+        class="group relative bg-gradient-to-br from-xfood-gray-medium to-xfood-gray-dark p-8 rounded-2xl border border-xfood-gray-medium hover:border-xfood-red-medium transition-all duration-500 hover:transform hover:scale-105"
+        [class.animate-fade-in-up]="true"
+        [style.animation-delay]="i * 200 + 'ms'"
+      >
+        <!-- Icon -->
+        <div class="relative mb-6">
+          <div
+            class="w-16 h-16 bg-gradient-to-r from-xfood-red-medium to-xfood-orange rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+          >
+            <img
+              [src]="service.icon"
+              [alt]="service.title"
+              class="w-8 h-8 filter brightness-0 invert"
+            />
+          </div>
+
+          <!-- Glow effect -->
+          <div
+            class="absolute inset-0 w-16 h-16 bg-gradient-to-r from-xfood-red-medium to-xfood-orange rounded-2xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-300"
+          ></div>
+        </div>
+
+        <h3
+          class="text-xl font-bold text-xfood-white-pure mb-4 group-hover:text-xfood-red-accent transition-colors duration-300"
+        >
+          {{ service.title }}
+        </h3>
+
+        <p class="text-xfood-gray-lighter leading-relaxed mb-6">
+          {{ service.description }}
+        </p>
+
+        <!-- Learn more link -->
+        <div
+          class="flex items-center text-xfood-red-accent group-hover:text-xfood-orange transition-colors duration-300 cursor-pointer"
+        >
+          <span class="text-sm font-semibold mr-2">Saiba mais</span>
+          <svg
+            class="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"
+            ></path>
+          </svg>
+        </div>
       </div>
     </div>
 
-    <div class="bg-xfood-off-white p-10 rounded-lg shadow-inner border border-xfood-gray-lightest">
-      <h2 class="text-3xl md:text-4xl font-bold text-xfood-gray-dark mb-8">O Que Mais Nosso Pacote de Gestão Oferece?</h2>
-      <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4 gap-x-8 text-left max-w-4xl mx-auto text-xfood-gray-medium">
-        <li *ngFor="let benefit of benefits" class="flex items-start">
-          <svg class="h-6 w-6 text-xfood-green flex-shrink-0 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-          <p>{{ benefit }}</p>
-        </li>
-      </ul>
+    <div class="text-center mt-16">
+      <a
+        routerLink="/solucoes"
+        class="inline-flex items-center bg-gradient-to-r from-xfood-red-medium to-xfood-red-accent text-xfood-white-pure text-lg font-bold px-8 py-4 rounded-full hover:shadow-2xl hover:shadow-xfood-red-medium/30 transition-all duration-300 transform hover:scale-105"
+      >
+        Ver Todas as Soluções
+        <svg
+          class="w-5 h-5 ml-2"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M17 8l4 4m0 0l-4 4m4-4H3"
+          ></path>
+        </svg>
+      </a>
     </div>
   </div>
 </section>
 
-<section class="py-16 bg-xfood-gray-dark text-xfood-white-pure text-center">
+<!-- Social Proof Section -->
+<section
+  class="py-20 bg-gradient-to-r from-xfood-gray-dark via-xfood-black to-xfood-gray-dark"
+>
   <div class="container mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold mb-6">Pronto para Ver Seu Delivery Crescer?</h2>
-    <p class="text-lg max-w-2xl mx-auto mb-8">
-      Não perca mais tempo com estratégias que não funcionam. Fale com nossos especialistas e descubra como a XFood pode transformar o seu negócio.
-    </p>
-    <a routerLink="/contato" class="bg-xfood-red-medium hover:bg-xfood-red-light text-xfood-white-pure text-xl font-bold px-10 py-5 rounded-full shadow-xl transition-all duration-300 transform hover:scale-105">
-      Agende Sua Análise Gratuita Agora!
-    </a>
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-xfood-white-pure mb-6">
+        Resultados que
+        <span
+          class="text-transparent bg-clip-text bg-gradient-to-r from-xfood-green to-xfood-orange"
+          >Falam por Si</span
+        >
+      </h2>
+      <p class="text-xl text-xfood-gray-lighter max-w-3xl mx-auto">
+        Nossos clientes não apenas crescem, eles dominam o mercado de delivery
+      </p>
+    </div>
+
+    <!-- Success Stories Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+      <div
+        *ngFor="let story of successStories"
+        class="relative bg-gradient-to-br from-xfood-white-pure to-xfood-off-white p-8 rounded-3xl shadow-2xl"
+      >
+        <div class="flex items-start space-x-4">
+          <img
+            [src]="story.image"
+            [alt]="story.name"
+            class="w-16 h-16 rounded-full object-cover border-4 border-xfood-red-medium"
+          />
+          <div class="flex-1">
+            <div class="flex items-center mb-2">
+              <h4 class="font-bold text-xfood-gray-dark text-lg">
+                {{ story.name }}
+              </h4>
+              <div
+                class="ml-2 bg-xfood-green text-xfood-white-pure text-xs px-2 py-1 rounded-full"
+              >
+                Cliente XFood
+              </div>
+            </div>
+            <p class="text-xfood-gray-medium italic mb-4">
+              "{{ story.testimonial }}"
+            </p>
+            <div class="flex space-x-4">
+              <div class="text-center">
+                <div class="text-2xl font-bold text-xfood-green">
+                  {{ story.growth }}
+                </div>
+                <div class="text-xs text-xfood-gray-medium">Crescimento</div>
+              </div>
+              <div class="text-center">
+                <div class="text-2xl font-bold text-xfood-orange">
+                  {{ story.revenue }}
+                </div>
+                <div class="text-xs text-xfood-gray-medium">Faturamento</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quote decoration -->
+        <div
+          class="absolute top-4 right-4 text-6xl text-xfood-gray-lightest opacity-20"
+        >
+          "
+        </div>
+      </div>
+    </div>
+
+    <!-- Client Logos -->
+    <div class="bg-xfood-gray-medium p-8 rounded-2xl">
+      <p class="text-center text-xfood-gray-lighter mb-8">
+        Empresas que confiam na XFood:
+      </p>
+      <div class="flex flex-wrap justify-center items-center gap-8 opacity-60">
+        <img
+          src="assets/images/client-ducheff-logo.png"
+          alt="Ducheff"
+          class="h-12 filter grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+        />
+        <img
+          src="assets/images/client-ganash-logo.png"
+          alt="Ganash"
+          class="h-12 filter grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+        />
+        <!-- Adicione mais logos conforme necessário -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section
+  class="py-20 bg-gradient-to-br from-xfood-red-dark via-xfood-red-medium to-xfood-red-accent text-center overflow-hidden relative"
+>
+  <!-- Background decoration -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div
+      class="absolute -top-40 -left-40 w-80 h-80 bg-xfood-orange opacity-10 rounded-full blur-3xl"
+    ></div>
+    <div
+      class="absolute -bottom-40 -right-40 w-80 h-80 bg-xfood-white-pure opacity-10 rounded-full blur-3xl"
+    ></div>
+  </div>
+
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="max-w-4xl mx-auto">
+      <h2
+        class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-xfood-white-pure mb-6 leading-tight"
+      >
+        Pronto para
+        <span class="block text-xfood-orange">Dominar o Delivery?</span>
+      </h2>
+
+      <p
+        class="text-xl md:text-2xl text-xfood-white-pure opacity-90 mb-8 max-w-2xl mx-auto"
+      >
+        Não deixe seus concorrentes saírem na frente.
+        <strong>Agende sua análise gratuita</strong> e descubra como multiplicar
+        seus resultados.
+      </p>
+
+      <!-- Urgency elements -->
+      <div
+        class="bg-xfood-white-pure/10 backdrop-blur-sm rounded-2xl p-6 mb-8 max-w-md mx-auto"
+      >
+        <div
+          class="flex items-center justify-center space-x-4 text-xfood-white-pure"
+        >
+          <div class="w-3 h-3 bg-xfood-orange rounded-full animate-pulse"></div>
+          <span class="font-semibold">Apenas 5 vagas disponíveis este mês</span>
+          <div class="w-3 h-3 bg-xfood-orange rounded-full animate-pulse"></div>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        <a
+          routerLink="/contato"
+          class="inline-block bg-xfood-white-pure text-xfood-red-medium text-xl font-bold px-12 py-5 rounded-full shadow-2xl hover:shadow-xfood-white-pure/50 transition-all duration-300 transform hover:scale-105 hover:bg-xfood-off-white"
+        >
+          🚀 Quero Crescer Agora!
+        </a>
+
+        <p class="text-sm text-xfood-white-pure/80">
+          ✅ Sem compromisso • ✅ Análise completa gratuita • ✅ Resultados em
+          30 dias
+        </p>
+      </div>
+    </div>
   </div>
 </section>

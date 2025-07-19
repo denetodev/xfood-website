@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -8,53 +8,88 @@ import { RouterModule } from '@angular/router';
   templateUrl: './solutions.component.html',
   styleUrl: './solutions.component.css',
 })
-export class SolutionsComponent {
-  solutions = [
+export class SolutionsComponent implements OnInit {
+  services = [
     {
-      title: 'Otimização Estratégica de Cardápio',
+      title: 'Otimização de Cardápio',
       description:
-        'Reestruturamos seu cardápio no iFood com base em dados. Criamos categorias inteligentes, otimizamos nomes e descrições dos produtos, e destacamos itens de alta rentabilidade para aumentar seu ticket médio e conversão.',
-      icon: 'assets/icons/icon-menu-optimization.svg', // Crie este ícone
+        'Reestruturamos seu menu com base em dados para maximizar conversões e ticket médio.',
+      icon: 'assets/icons/icon-menu-optimization.svg',
     },
     {
-      title: 'Marketing e Visibilidade no iFood',
+      title: 'Marketing Estratégico',
       description:
-        'Desenvolvemos e implementamos campanhas de marketing eficazes, como cupons exclusivos, participação em listas sazonais e o uso estratégico de tags. Aumentamos a visibilidade do seu negócio e a aquisição de novos clientes.',
-      icon: 'assets/icons/icon-marketing.svg', // Crie este ícone
+        'Campanhas personalizadas que aumentam visibilidade e atraem novos clientes no iFood.',
+      icon: 'assets/icons/icon-marketing.svg',
     },
     {
-      title: 'Gestão de Avaliações e Reputação',
+      title: 'Gestão de Reputação',
       description:
-        'Monitoramos e respondemos às avaliações dos clientes, tanto positivas quanto negativas. Auxiliamos na gestão de crises pós-venda, garantindo que sua reputação online seja sempre positiva e atrativa para novos pedidos.',
-      icon: 'assets/icons/icon-reputation.svg', // Crie este ícone
+        'Monitoramento ativo das avaliações para manter sua marca sempre bem posicionada.',
+      icon: 'assets/icons/icon-reputation.svg',
     },
     {
-      title: 'Estratégias Promocionais Avançadas',
+      title: 'Promoções Inteligentes',
       description:
-        'Criamos promoções irresistíveis, combos estratégicos e ofertas para novos clientes que impulsionam suas vendas. Posicionamos seus produtos de forma destacada nas buscas do iFood e ativamos o upsell para maximizar cada pedido.',
-      icon: 'assets/icons/icon-promotions.svg', // Crie este ícone
+        'Estratégias promocionais que impulsionam vendas sem comprometer a margem de lucro.',
+      icon: 'assets/icons/icon-promotions.svg',
     },
     {
-      title: 'Consultoria Operacional e Financeira',
+      title: 'Consultoria Financeira',
       description:
-        'Oferecemos suporte na precificação de seus produtos, gestão de cancelamentos e reembolsos. Analisamos seus custos e performance operacional para garantir que cada venda seja lucrativa. Treinamento de delivery online quando necessário.',
-      icon: 'assets/icons/icon-finance.svg', // Crie este ícone
+        'Análise completa de custos e precificação para garantir rentabilidade máxima.',
+      icon: 'assets/icons/icon-finance.svg',
     },
     {
-      title: 'Análise de Dados e Relatórios Detalhados',
+      title: 'Relatórios Detalhados',
       description:
-        'Fornecemos relatórios quinzenais e mensais completos com métricas de desempenho, análise de vendas, custos, e tendências. Transformamos dados em insights acionáveis para otimizar continuamente sua operação.',
-      icon: 'assets/icons/icon-reports.svg', // Crie este ícone
+        'Métricas precisas e insights acionáveis para otimização contínua do seu negócio.',
+      icon: 'assets/icons/icon-reports.svg',
     },
   ];
 
-  benefits = [
-    'Análise e estudo de caso aprofundado.',
-    'Elaboração de vitrine virtual atrativa e otimizada.',
-    'Atualização contínua do perfil e ajustes de estratégia.',
-    'Gestão diária e ativa das plataformas durante o período contratado.',
-    'Contestação de cancelamentos e solicitação de reembolso.',
-    'Ajustes de estratégia de acordo com as necessidades da loja.',
-    'Acesso a especialistas com conhecimento aprofundado do iFood.',
+  successStories = [
+    {
+      name: 'Ducheff',
+      image: 'assets/images/client-ducheff-logo.png',
+      testimonial:
+        'Com a XFood, nosso faturamento triplicou em 60 dias. A equipe é extremamente profissional e os resultados são impressionantes.',
+      growth: '+280%',
+      revenue: 'R$ 85K/mês',
+    },
+    {
+      name: 'Ganash',
+      image: 'assets/images/client-ganash-logo.png',
+      testimonial:
+        'A otimização do cardápio e as estratégias de marketing da XFood transformaram completamente nosso delivery. Recomendo!',
+      growth: '+150%',
+      revenue: 'R$ 42K/mês',
+    },
   ];
+
+  ngOnInit() {
+    // Adicionar animações de entrada após o carregamento
+    this.animateOnScroll();
+  }
+
+  private animateOnScroll() {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px',
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in-up');
+        }
+      });
+    }, observerOptions);
+
+    // Observar elementos que devem ser animados
+    setTimeout(() => {
+      const elements = document.querySelectorAll('.group');
+      elements.forEach((el) => observer.observe(el));
+    }, 100);
+  }
 }

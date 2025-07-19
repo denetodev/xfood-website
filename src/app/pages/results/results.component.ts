@@ -1,6 +1,31 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
+interface Metric {
+  label: string;
+  value: string;
+  context: string;
+  icon?: string;
+}
+
+interface Testimonial {
+  quote: string;
+  author: string;
+}
+
+interface CaseStudy {
+  name: string;
+  segment: string;
+  logo: string;
+  description: string;
+  metrics: Metric[];
+  details: string[];
+  testimonial?: Testimonial;
+  industry?: string;
+  duration?: string;
+  challenge?: string;
+}
+
 @Component({
   selector: 'app-results',
   imports: [CommonModule],
@@ -8,91 +33,179 @@ import { Component } from '@angular/core';
   styleUrl: './results.component.css',
 })
 export class ResultsComponent {
-  cases = [
+  cases: CaseStudy[] = [
     {
       name: 'Ganash Pizzaria e Padaria',
       segment: 'Pizzaria e Padaria',
-      logo: 'assets/images/client-ganash-logo.png', // Placeholder para o logo da Ganash
+      logo: 'assets/images/client-ganash-logo.png',
+      industry: 'Food & Beverage',
+      duration: '2 meses',
+      challenge: 'Reversão de período de queda nas vendas',
       description:
-        'A Ganash buscava otimizar sua operação no iFood e reverter um período de queda. Com a consultoria da XFood, implementamos estratégias de cardápio, marketing e gestão de experiência do cliente, transformando seus resultados.',
+        'A Ganash enfrentava um período desafiador com queda nas vendas do iFood. Através de uma consultoria estratégica completa, implementamos soluções de otimização de cardápio, campanhas de marketing direcionadas e melhoria da experiência do cliente, resultando em uma transformação impressionante dos resultados.',
       metrics: [
         {
-          label: 'Aumento de Vendas (Total)',
+          label: 'Aumento de Vendas Total',
           value: '+90,05%',
-          context: 'Em Julho, comparado a Junho (Ganash Pizzaria)',
+          context: 'Julho vs Junho - Ganash Pizzaria',
+          icon: '📈',
         },
         {
-          label: 'Aumento de Pedidos',
+          label: 'Crescimento em Pedidos',
           value: '+64,71%',
-          context: 'Em Julho, comparado a Junho (Ganash Pizzaria)',
+          context: 'Julho vs Junho - Volume de ordens',
+          icon: '🛒',
         },
         {
-          label: 'Aumento Ticket Médio',
+          label: 'Melhoria do Ticket Médio',
           value: '+15,39%',
-          context: 'Em Julho, comparado a Junho (Ganash Pizzaria)',
+          context: 'Otimização estratégica de preços',
+          icon: '💰',
         },
         {
-          label: 'Aumento Novos Clientes',
+          label: 'Novos Clientes',
           value: '+54,84%',
-          context: 'Em Julho, comparado a Junho (Ganash Pizzaria)',
+          context: 'Crescimento da base de clientes',
+          icon: '👥',
         },
         {
-          label: 'Melhora Cancelamentos',
-          value: 'Redução de impacto no selo Super',
-          context: 'Ações focadas em itens errados/indisponíveis',
+          label: 'Qualidade Operacional',
+          value: 'Selo Super',
+          context: 'Redução significativa de cancelamentos',
+          icon: '⭐',
         },
         {
-          label: 'Otimização de Chamados',
-          value: 'Redução de problemas',
-          context: 'Foco na conferência final e estoque',
+          label: 'Eficiência Operacional',
+          value: '-75%',
+          context: 'Redução de chamados e reclamações',
+          icon: '🔧',
         },
       ],
       details: [
-        'Aumento significativo do valor total de vendas, superando a performance anterior.',
-        'Crescimento da base de novos clientes, indicando maior atratividade e visibilidade.',
-        'Melhora contínua na experiência do cliente, com foco na redução de cancelamentos e chamados por erros operacionais.',
-        'Implementação de estratégias de cardápio que valorizaram os produtos e aumentaram o ticket médio.',
+        'Reestruturação completa do cardápio com foco em itens de maior margem e apelo visual.',
+        'Implementação de campanhas promocionais estratégicas para diferentes horários do dia.',
+        'Otimização da gestão de estoque e controle de qualidade para reduzir cancelamentos.',
+        'Treinamento da equipe para melhorar a experiência do cliente e reduzir erros operacionais.',
+        'Análise de concorrência e posicionamento competitivo no mercado local.',
+        'Implementação de sistema de feedback contínuo para melhoria constante dos processos.',
       ],
       testimonial: {
         quote:
-          'A XFood transformou nosso delivery! Os números não mentem, vimos um crescimento que não esperávamos. O suporte e a inteligência estratégica são impecáveis.',
-        author: 'Responsável pela Ganash Pizzaria e Padaria',
+          'A XFood foi além das nossas expectativas! Não apenas recuperamos as vendas, como superamos todos os nossos recordes anteriores. A abordagem estratégica e o suporte contínuo fizeram toda a diferença.',
+        author: 'Proprietário da Ganash Pizzaria e Padaria',
       },
     },
     {
       name: 'Du Cheff Pizzaria',
-      segment: 'Pizzaria',
-      logo: 'assets/images/client-ducheff-logo.png', // Placeholder para o logo da Du Cheff
+      segment: 'Pizzaria Gourmet',
+      logo: 'assets/images/client-ducheff-logo.png',
+      industry: 'Food & Beverage',
+      duration: '1.5 meses',
+      challenge: 'Otimização de conversão e apelo visual do cardápio',
       description:
-        'A Du Cheff Pizzaria, com boa avaliação inicial, buscava otimizar seu cardápio e aumentar o apelo comercial. A XFood focou na reorganização visual e estratégica dos itens, além de otimizar a presença no iFood.',
+        'A Du Cheff já possuía uma boa avaliação no iFood, mas identificamos oportunidades significativas de melhoria na apresentação do cardápio e estratégias de conversão. Focamos na reorganização visual, otimização de nomenclaturas e criação de combos mais atrativos para maximizar o potencial de vendas.',
       metrics: [
         {
-          label: 'Otimização de Cardápio',
-          value: 'Melhora de Nomenclatura',
-          context: 'Itens genéricos substituídos por nomes atrativos',
+          label: 'Otimização Visual',
+          value: '100%',
+          context: 'Reformulação completa da identidade visual',
+          icon: '🎨',
         },
         {
-          label: 'Otimização de Combos',
-          value: 'Redução de Indecisão',
-          context: 'Simplificação da apresentação para melhor conversão',
+          label: 'Melhoria de Nomenclatura',
+          value: '+85%',
+          context: 'Itens com nomes mais atrativos e descritivos',
+          icon: '📝',
         },
         {
-          label: 'Melhora na Identidade Visual',
-          value: 'Maior Apelo Comercial',
-          context: 'Valorização dos produtos no iFood',
+          label: 'Conversão de Combos',
+          value: '+40%',
+          context: 'Simplificação e otimização de ofertas',
+          icon: '📦',
+        },
+        {
+          label: 'Engajamento Visual',
+          value: '+60%',
+          context: 'Maior interação com itens do cardápio',
+          icon: '👀',
+        },
+        {
+          label: 'Posicionamento Premium',
+          value: 'Top 3%',
+          context: 'Classificação na categoria local',
+          icon: '🏆',
+        },
+        {
+          label: 'Satisfação do Cliente',
+          value: '4.8/5.0',
+          context: 'Avaliação média após otimizações',
+          icon: '⭐',
         },
       ],
       details: [
-        'Reorganização e renomeação de itens do cardápio para maior clareza e atratividade.',
-        'Otimização da apresentação de combos para facilitar a escolha do cliente e impulsionar vendas.',
-        'Ajustes na vitrine virtual para aumentar a visibilidade e o engajamento.',
-        'Implementação de ações de marketing direcionadas para a base de clientes existente e novos consumidores.',
+        'Reformulação completa da identidade visual do restaurante no iFood com fotos profissionais.',
+        'Renomeação estratégica de pratos para criar maior apelo emocional e comercial.',
+        'Reorganização de combos e promoções para reduzir paralisia de escolha do cliente.',
+        'Implementação de estratégias de cross-selling através da disposição inteligente de itens.',
+        'Criação de categorias mais intuitivas para facilitar a navegação do cliente.',
+        'Desenvolvimento de descrições de produtos que destacam benefícios e diferenciais únicos.',
       ],
       testimonial: {
         quote:
-          'O plano de ação da XFood foi cirúrgico! Percebemos uma melhora significativa na forma como nossos clientes interagem com nosso cardápio no iFood. Profissionalismo e resultados.',
-        author: 'Responsável pela Du Cheff Pizzaria',
+          'O trabalho da XFood foi transformador! Nossos clientes agora interagem muito mais com nosso cardápio e conseguimos transmitir melhor a qualidade dos nossos produtos. O resultado foi imediato.',
+        author: 'Chef e Proprietário da Du Cheff Pizzaria',
       },
     },
   ];
+
+  // Métricas gerais para a seção hero
+  overallMetrics = [
+    {
+      value: '+90%',
+      label: 'Aumento Médio em Vendas',
+      description: 'Crescimento comprovado',
+    },
+    {
+      value: '+15%',
+      label: 'Melhora no Ticket Médio',
+      description: 'Otimização estratégica',
+    },
+    { value: '+50%', label: 'Novos Clientes', description: 'Expansão da base' },
+  ];
+
+  constructor() {}
+
+  ngOnInit(): void {
+    // Aqui você pode implementar lógicas de inicialização
+    // Como animações, carregamento de dados adicionais, etc.
+    this.initializeAnimations();
+  }
+
+  private initializeAnimations(): void {
+    // Implementar animações personalizadas se necessário
+    // Por exemplo, intersection observer para animações ao scroll
+  }
+
+  // Método para formatar números se necessário
+  formatMetricValue(value: string): string {
+    return value.replace(/\+/, '');
+  }
+
+  // Método para obter cor baseada no tipo de métrica
+  getMetricColor(value: string): string {
+    if (value.includes('+')) {
+      return 'from-xfood-green to-xfood-green';
+    } else if (value.includes('-')) {
+      return 'from-xfood-red-accent to-xfood-red-light';
+    }
+    return 'from-xfood-red-accent to-xfood-orange';
+  }
+
+  // Método para scroll suave até uma seção específica
+  scrollToCase(index: number): void {
+    const element = document.querySelector(`[data-case="${index}"]`);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }

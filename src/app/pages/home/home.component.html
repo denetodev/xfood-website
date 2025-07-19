@@ -1,165 +1,480 @@
+<!-- Hero Section with Gradient Background -->
 <section
-  class="relative bg-xfood-gray-dark text-xfood-white h-[60vh] md:h-[80vh] flex items-center justify-center overflow-hidden"
+  class="relative min-h-screen bg-gradient-to-br from-xfood-gray-dark via-xfood-black to-xfood-gray-medium overflow-hidden"
 >
-  <img
-    src="assets/images/hero-background.jpg"
-    alt="Fundo de Restaurante com Comida Delivery"
-    class="absolute inset-0 w-full h-full object-cover opacity-30"
-  />
-  <div class="relative z-10 text-center px-4">
-    <h1
-      class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 animate__animated animate__fadeInDown"
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-5">
+    <div
+      class="absolute inset-0"
+      style="
+        background-image: radial-gradient(
+          circle at 25% 25%,
+          white 2px,
+          transparent 2px
+        );
+        background-size: 60px 60px;
+      "
+    ></div>
+  </div>
+
+  <!-- Animated Background Elements -->
+  <div
+    class="absolute top-20 left-10 w-72 h-72 bg-xfood-red-medium rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"
+  ></div>
+  <div
+    class="absolute top-40 right-20 w-96 h-96 bg-xfood-orange rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse animation-delay-2000"
+  ></div>
+  <div
+    class="absolute bottom-20 left-1/3 w-80 h-80 bg-xfood-green rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse animation-delay-4000"
+  ></div>
+
+  <div
+    class="relative z-10 container mx-auto px-6 py-20 flex items-center min-h-screen"
+  >
+    <div class="max-w-4xl mx-auto text-center">
+      <!-- Main Headline -->
+      <div class="mb-8">
+        <h1
+          class="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-tight mb-6 tracking-tight"
+        >
+          <span
+            class="block bg-gradient-to-r from-xfood-red-light to-xfood-orange bg-clip-text text-transparent"
+          >
+            XFood
+          </span>
+          <span
+            class="text-3xl md:text-4xl lg:text-5xl font-light text-xfood-gray-light block mt-4"
+          >
+            Gestão Estratégica de Delivery
+          </span>
+        </h1>
+      </div>
+
+      <!-- Subtitle -->
+      <p
+        class="text-xl md:text-2xl text-xfood-gray-light max-w-3xl mx-auto mb-12 leading-relaxed"
+      >
+        Transformamos seu negócio no iFood com estratégias comprovadas que
+        <span class="text-xfood-orange font-semibold"
+          >multiplicam suas vendas</span
+        >
+        e
+        <span class="text-xfood-green font-semibold"
+          >maximizam seus lucros</span
+        >
+      </p>
+
+      <!-- CTA Buttons -->
+      <div
+        class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16"
+      >
+        <a
+          routerLink="/contato"
+          class="group relative px-8 py-4 bg-gradient-to-r from-xfood-red-medium to-xfood-red-light text-white font-bold text-lg rounded-2xl shadow-2xl transform transition-all duration-300 hover:scale-105 hover:shadow-red-500/25 min-w-[280px]"
+        >
+          <span class="relative z-10">Análise Gratuita Agora!</span>
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-xfood-red-light to-xfood-red-vibrant rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          ></div>
+        </a>
+
+        <a
+          routerLink="/resultados"
+          class="group px-8 py-4 bg-transparent border-2 border-xfood-orange text-xfood-orange font-bold text-lg rounded-2xl transition-all duration-300 hover:bg-xfood-orange hover:text-xfood-gray-dark min-w-[280px]"
+        >
+          Ver Cases de Sucesso
+        </a>
+      </div>
+
+      <!-- Stats Section -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div
+          class="text-center p-6 bg-xfood-gray-dark/50 backdrop-blur-sm rounded-2xl border border-xfood-gray-medium/30"
+        >
+          <div class="text-4xl font-black text-xfood-green mb-2">+300%</div>
+          <div class="text-xfood-gray-light">Aumento em Vendas</div>
+        </div>
+        <div
+          class="text-center p-6 bg-xfood-gray-dark/50 backdrop-blur-sm rounded-2xl border border-xfood-gray-medium/30"
+        >
+          <div class="text-4xl font-black text-xfood-orange mb-2">+150%</div>
+          <div class="text-xfood-gray-light">Crescimento no Ticket Médio</div>
+        </div>
+        <div
+          class="text-center p-6 bg-xfood-gray-dark/50 backdrop-blur-sm rounded-2xl border border-xfood-gray-medium/30"
+        >
+          <div class="text-4xl font-black text-xfood-red-light mb-2">98%</div>
+          <div class="text-xfood-gray-light">Taxa de Satisfação</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div
+    class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-xfood-gray-light animate-bounce"
+  >
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M19 14l-7 7m0 0l-7-7m7 7V3"
+      ></path>
+    </svg>
+  </div>
+</section>
+
+<!-- Problems Section -->
+<section class="py-20 bg-xfood-gray-dark">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+        Você enfrenta esses
+        <span class="text-xfood-red-light">desafios</span>?
+      </h2>
+      <p class="text-xl text-xfood-gray-light max-w-3xl mx-auto">
+        Identificamos e solucionamos os principais problemas que impedem seu
+        delivery de decolar
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div
+        class="group bg-xfood-gray-medium/30 backdrop-blur-sm p-8 rounded-3xl border border-xfood-gray-medium/50 hover:border-xfood-red-light/50 transition-all duration-500 hover:transform hover:scale-105"
+      >
+        <div
+          class="w-16 h-16 bg-gradient-to-r from-xfood-red-medium to-xfood-red-light rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-500"
+        >
+          <svg
+            class="w-8 h-8 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            ></path>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-4">Baixa Visibilidade</h3>
+        <p class="text-xfood-gray-light leading-relaxed">
+          Seu restaurante se perde na multidão? Otimizamos sua presença no iFood
+          para atrair mais clientes e destacar seus diferenciais.
+        </p>
+      </div>
+
+      <div
+        class="group bg-xfood-gray-medium/30 backdrop-blur-sm p-8 rounded-3xl border border-xfood-gray-medium/50 hover:border-xfood-orange/50 transition-all duration-500 hover:transform hover:scale-105"
+      >
+        <div
+          class="w-16 h-16 bg-gradient-to-r from-xfood-orange to-xfood-red-light rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-500"
+        >
+          <svg
+            class="w-8 h-8 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5H7a2 2 0 00-2 2v8a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+            ></path>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-4">Cardápio Confuso</h3>
+        <p class="text-xfood-gray-light leading-relaxed">
+          Organizamos e valorizamos seus produtos de forma estratégica para
+          aumentar o ticket médio e as conversões de venda.
+        </p>
+      </div>
+
+      <div
+        class="group bg-xfood-gray-medium/30 backdrop-blur-sm p-8 rounded-3xl border border-xfood-gray-medium/50 hover:border-xfood-green/50 transition-all duration-500 hover:transform hover:scale-105"
+      >
+        <div
+          class="w-16 h-16 bg-gradient-to-r from-xfood-green to-xfood-orange rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-500"
+        >
+          <svg
+            class="w-8 h-8 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+            ></path>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-4">Avaliações Ruins</h3>
+        <p class="text-xfood-gray-light leading-relaxed">
+          Trabalhamos a experiência do cliente de ponta a ponta para melhorar
+          sua reputação e reduzir cancelamentos.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process Section -->
+<section class="py-20 bg-gradient-to-b from-xfood-gray-dark to-xfood-black">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+        Nosso <span class="text-xfood-orange">Processo</span>
+      </h2>
+      <p class="text-xl text-xfood-gray-light max-w-3xl mx-auto">
+        Metodologia comprovada, focada em resultados mensuráveis e crescimento
+        sustentável
+      </p>
+    </div>
+
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto"
     >
-      XFood: Sua Gestão de Delivery no iFood para Vender Mais e Lucrar Mais.
-    </h1>
-    <p
-      class="text-lg md:text-xl max-w-2xl mx-auto mb-8 animate__animated animate__fadeInUp"
-    >
-      Transformamos seu negócio no iFood com estratégias comprovadas que
-      aumentam visibilidade, vendas e satisfação do cliente.
+      <div class="text-center group">
+        <div class="relative mb-8">
+          <div
+            class="w-24 h-24 bg-gradient-to-r from-xfood-red-medium to-xfood-red-light rounded-full flex items-center justify-center mx-auto shadow-2xl group-hover:scale-110 transition-transform duration-500"
+          >
+            <span class="text-2xl font-black text-white">1</span>
+          </div>
+          <div
+            class="absolute top-12 left-1/2 transform -translate-x-1/2 w-px h-16 bg-gradient-to-b from-xfood-red-light to-transparent lg:hidden"
+          ></div>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-4">Análise Detalhada</h3>
+        <p class="text-xfood-gray-light leading-relaxed">
+          Auditoria completa do seu iFood: performance, concorrência,
+          oportunidades e pontos de melhoria.
+        </p>
+      </div>
+
+      <div class="text-center group">
+        <div class="relative mb-8">
+          <div
+            class="w-24 h-24 bg-gradient-to-r from-xfood-orange to-xfood-red-light rounded-full flex items-center justify-center mx-auto shadow-2xl group-hover:scale-110 transition-transform duration-500"
+          >
+            <span class="text-2xl font-black text-white">2</span>
+          </div>
+          <div
+            class="absolute top-12 left-1/2 transform -translate-x-1/2 w-px h-16 bg-gradient-to-b from-xfood-orange to-transparent lg:hidden"
+          ></div>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-4">
+          Estratégia Personalizada
+        </h3>
+        <p class="text-xfood-gray-light leading-relaxed">
+          Plano de ação sob medida para seu negócio, com metas claras e
+          cronograma definido.
+        </p>
+      </div>
+
+      <div class="text-center group">
+        <div class="relative mb-8">
+          <div
+            class="w-24 h-24 bg-gradient-to-r from-xfood-green to-xfood-orange rounded-full flex items-center justify-center mx-auto shadow-2xl group-hover:scale-110 transition-transform duration-500"
+          >
+            <span class="text-2xl font-black text-white">3</span>
+          </div>
+          <div
+            class="absolute top-12 left-1/2 transform -translate-x-1/2 w-px h-16 bg-gradient-to-b from-xfood-green to-transparent lg:hidden"
+          ></div>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-4">Execução Expert</h3>
+        <p class="text-xfood-gray-light leading-relaxed">
+          Implementação e gestão contínua com acompanhamento diário da sua
+          operação.
+        </p>
+      </div>
+
+      <div class="text-center group">
+        <div class="relative mb-8">
+          <div
+            class="w-24 h-24 bg-gradient-to-r from-xfood-red-light to-xfood-red-vibrant rounded-full flex items-center justify-center mx-auto shadow-2xl group-hover:scale-110 transition-transform duration-500"
+          >
+            <span class="text-2xl font-black text-white">4</span>
+          </div>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-4">
+          Resultados Comprovados
+        </h3>
+        <p class="text-xfood-gray-light leading-relaxed">
+          Relatórios detalhados e métricas que comprovam o crescimento do seu
+          faturamento.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Section -->
+<section class="py-20 bg-xfood-gray-dark">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+        Por que escolher a <span class="text-xfood-red-light">XFood</span>?
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      <div
+        class="group bg-gradient-to-br from-xfood-gray-medium/40 to-xfood-gray-dark/40 backdrop-blur-sm p-8 rounded-3xl border border-xfood-gray-medium/50 hover:border-xfood-green/50 transition-all duration-500"
+      >
+        <div class="flex items-start space-x-4">
+          <div
+            class="w-12 h-12 bg-xfood-green rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:rotate-12 transition-transform duration-500"
+          >
+            <svg
+              class="w-6 h-6 text-white"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-white mb-4">
+              Resultados Superiores
+            </h3>
+            <p class="text-xfood-gray-light leading-relaxed">
+              Metodologia própria que gera crescimento expressivo em vendas,
+              ticket médio e aquisição de novos clientes.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="group bg-gradient-to-br from-xfood-gray-medium/40 to-xfood-gray-dark/40 backdrop-blur-sm p-8 rounded-3xl border border-xfood-gray-medium/50 hover:border-xfood-orange/50 transition-all duration-500"
+      >
+        <div class="flex items-start space-x-4">
+          <div
+            class="w-12 h-12 bg-xfood-orange rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:rotate-12 transition-transform duration-500"
+          >
+            <svg
+              class="w-6 h-6 text-white"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-white mb-4">Gestão Completa</h3>
+            <p class="text-xfood-gray-light leading-relaxed">
+              Do cardápio ao marketing, da precificação à gestão de crises.
+              Cuidamos de cada detalhe da sua operação.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="group bg-gradient-to-br from-xfood-gray-medium/40 to-xfood-gray-dark/40 backdrop-blur-sm p-8 rounded-3xl border border-xfood-gray-medium/50 hover:border-xfood-red-light/50 transition-all duration-500"
+      >
+        <div class="flex items-start space-x-4">
+          <div
+            class="w-12 h-12 bg-xfood-red-light rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:rotate-12 transition-transform duration-500"
+          >
+            <svg
+              class="w-6 h-6 text-white"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M13 6a3 3 0 11-6 0 3 3 0 016 0zm-6 6a3 3 0 11-6 0 3 3 0 016 0zm11 0a3 3 0 11-6 0 3 3 0 016 0z"
+              ></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-white mb-4">
+              Equipe Especializada
+            </h3>
+            <p class="text-xfood-gray-light leading-relaxed">
+              Time de especialistas com Adriano Lima, garantindo suporte
+              personalizado e resultados consistentes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Success Stories CTA -->
+<section
+  class="py-20 bg-gradient-to-r from-xfood-red-medium via-xfood-red-light to-xfood-orange relative overflow-hidden"
+>
+  <div class="absolute inset-0 bg-black/20"></div>
+  <div class="relative z-10 container mx-auto px-6 text-center">
+    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+      Histórias Reais de <span class="text-xfood-black">Sucesso</span>
+    </h2>
+    <p class="text-xl text-white/90 max-w-4xl mx-auto mb-12 leading-relaxed">
+      Empresas como Ganash Pizzaria multiplicaram seus resultados com nossa
+      consultoria estratégica. Números que comprovam o poder da gestão
+      inteligente no delivery.
     </p>
     <a
-      routerLink="/contato"
-      class="bg-xfood-red-medium hover:bg-xfood-red-light text-xfood-white-pure text-lg md:text-xl font-bold px-8 py-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 animate__animated animate__zoomIn"
+      routerLink="/resultados"
+      class="inline-block bg-white text-xfood-red-medium font-bold text-xl px-12 py-5 rounded-2xl shadow-2xl transform transition-all duration-300 hover:scale-105 hover:shadow-white/25"
     >
-      Agende sua Análise Gratuita!
+      Ver Cases de Sucesso
     </a>
   </div>
 </section>
 
-<section class="py-16 bg-xfood-white">
-  <div class="container mx-auto px-4 text-center">
-    <h2 class="text-3xl md:text-4xl font-bold text-xfood-gray-dark mb-12">
-      Você enfrenta desafios no seu delivery? Nós temos a solução!
+<!-- Final CTA -->
+<section class="py-20 bg-xfood-black text-center relative overflow-hidden">
+  <!-- Background Elements -->
+  <div
+    class="absolute top-0 left-1/4 w-64 h-64 bg-xfood-red-medium rounded-full filter blur-3xl opacity-10"
+  ></div>
+  <div
+    class="absolute bottom-0 right-1/4 w-96 h-96 bg-xfood-orange rounded-full filter blur-3xl opacity-10"
+  ></div>
+
+  <div class="relative z-10 container mx-auto px-6">
+    <h2 class="text-4xl md:text-6xl font-black text-white mb-8 leading-tight">
+      Pronto para <span class="text-xfood-red-light">Transformar</span><br />
+      seu Delivery?
     </h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-      <div
-        class="bg-xfood-white-pure p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
-      >
-        <h3 class="text-xl font-semibold text-xfood-gray-dark mb-4">
-          Baixa Visibilidade no iFood?
-        </h3>
-        <p class="text-xfood-gray-medium">
-          Seu restaurante se perde em meio à concorrência? Otimizamos sua
-          presença para atrair mais clientes.
-        </p>
-      </div>
-      <div
-        class="bg-xfood-white-pure p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
-      >
-        <h3 class="text-xl font-semibold text-xfood-gray-dark mb-4">
-          Cardápio Confuso ou Pouco Atrativo?
-        </h3>
-        <p class="text-xfood-gray-medium">
-          Organizamos e valorizamos seus produtos para aumentar o ticket médio e
-          a conversão.
-        </p>
-      </div>
-      <div
-        class="bg-xfood-white-pure p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
-      >
-        <h3 class="text-xl font-semibold text-xfood-gray-dark mb-4">
-          Avaliações Negativas ou Cancelamentos?
-        </h3>
-        <p class="text-xfood-gray-medium">
-          Trabalhamos a experiência do cliente para melhorar sua reputação e
-          reduzir perdas.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="py-16 bg-xfood-off-white">
-  <div class="container mx-auto px-4 text-center">
-    <h2 class="text-3xl md:text-4xl font-bold text-xfood-gray-dark mb-12">
-      Nosso Processo: Simples, Eficaz, Focado em Resultados
-    </h2>
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-      <div
-        class="flex flex-col items-center p-6 bg-xfood-white-pure rounded-lg shadow-md"
-      >
-        <img
-          src="assets/icons/icon-analysis.svg"
-          alt="Ícone Análise"
-          class="h-16 w-16 mb-4"
-        />
-        <h3 class="text-xl font-semibold text-xfood-gray-dark mb-2">
-          1. Análise Detalhada
-        </h3>
-        <p class="text-xfood-gray-medium">
-          Mergulhamos nos dados do seu iFood: cardápio, marketing, avaliações e
-          performance operacional.
-        </p>
-      </div>
-      <div
-        class="flex flex-col items-center p-6 bg-xfood-white-pure rounded-lg shadow-md"
-      >
-        <img
-          src="assets/icons/icon-plan.svg"
-          alt="Ícone Plano"
-          class="h-16 w-16 mb-4"
-        />
-        <h3 class="text-xl font-semibold text-xfood-gray-dark mb-2">
-          2. Plano de Ação Personalizado
-        </h3>
-
-        <p class="text-xfood-gray-medium">
-          Desenvolvemos estratégias sob medida, com ações claras e objetivas
-          para otimizar cada área.
-        </p>
-      </div>
-      <div
-        class="flex flex-col items-center p-6 bg-xfood-white-pure rounded-lg shadow-md"
-      >
-        <img
-          src="assets/icons/icon-execution.svg"
-          alt="Ícone Execução"
-          class="h-16 w-16 mb-4"
-        />
-        <h3 class="text-xl font-semibold text-xfood-gray-dark mb-2">
-          3. Execução e Gestão Contínua
-        </h3>
-
-        <p class="text-xfood-gray-medium">
-          Implementamos as estratégias e fazemos a gestão diária, semanal e
-          mensal da sua operação.
-        </p>
-      </div>
-      <div
-        class="flex flex-col items-center p-6 bg-xfood-white-pure rounded-lg shadow-md"
-      >
-        <img
-          src="assets/icons/icon-results.svg"
-          alt="Ícone Resultados"
-          class="h-16 w-16 mb-4"
-        />
-        <h3 class="text-xl font-semibold text-xfood-gray-dark mb-2">
-          4. Resultados Comprovados
-        </h3>
-
-        <p class="text-xfood-gray-medium">
-          Acompanhamos métricas e relatórios para garantir o crescimento do seu
-          faturamento e lucro.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="py-16 bg-xfood-white">
-  <div class="container mx-auto px-4">
-    <h2
-      class="text-3xl md:text-4xl font-bold text-xfood-gray-dark text-center mb-12"
+    <p
+      class="text-xl text-xfood-gray-light max-w-3xl mx-auto mb-12 leading-relaxed"
     >
-      Por Que Escolher a XFood?
-    </h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      Não deixe seu negócio no iFood ao acaso. Conte com a XFood para alcançar
+      seu máximo potencial de vendas e lucro com estratégias comprovadas.
+    </p>
+    <a
+      routerLink="/contato"
+      class="group inline-block relative bg-gradient-to-r from-xfood-red-medium to-xfood-red-light text-white font-bold text-2xl px-12 py-6 rounded-2xl shadow-2xl transform transition-all duration-500 hover:scale-110 hover:shadow-red-500/50"
+    >
+      <span class="relative z-10">Quero Multiplicar Meu Faturamento!</span>
       <div
-        class="bg-xfood-white-pure p-6 rounded-lg shadow-md flex items-start space-x-4"
-      >
+        class="absolute inset-0 bg-gradient-to-r from-xfood-red-light to-xfood-red-vibrant rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+      ></div>
+    </a>
+
+    <!-- Trust Elements -->
+    <div
+      class="mt-16 flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-12 text-xfood-gray-light"
+    >
+      <div class="flex items-center space-x-2">
         <svg
-          class="h-8 w-8 text-xfood-green flex-shrink-0"
+          class="w-5 h-5 text-xfood-green"
           fill="currentColor"
           viewBox="0 0 20 20"
         >
@@ -169,98 +484,36 @@
             clip-rule="evenodd"
           ></path>
         </svg>
-        <div>
-          <h3 class="text-xl font-semibold text-xfood-gray-dark mb-2">
-            Resultados Comprovados e Superiores
-          </h3>
-
-          <p class="text-xfood-gray-medium">
-            Nossa metodologia gera crescimento expressivo em vendas, ticket
-            médio e aquisição de novos clientes.
-          </p>
-        </div>
+        <span>Análise 100% Gratuita</span>
       </div>
-      <div
-        class="bg-xfood-white-pure p-6 rounded-lg shadow-md flex items-start space-x-4"
-      >
+      <div class="flex items-center space-x-2">
         <svg
-          class="h-8 w-8 text-xfood-green flex-shrink-0"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-        >
-          <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-        </svg>
-        <div>
-          <h3 class="text-xl font-semibold text-xfood-gray-dark mb-2">
-            Gestão Estratégica Completa
-          </h3>
-
-          <p class="text-xfood-gray-medium">
-            Do cardápio ao marketing, da precificação à gestão de crises,
-            cuidamos de cada detalhe.
-          </p>
-        </div>
-      </div>
-      <div
-        class="bg-xfood-white-pure p-6 rounded-lg shadow-md flex items-start space-x-4"
-      >
-        <svg
-          class="h-8 w-8 text-xfood-green flex-shrink-0"
+          class="w-5 h-5 text-xfood-green"
           fill="currentColor"
           viewBox="0 0 20 20"
         >
           <path
-            d="M13 6a3 3 0 11-6 0 3 3 0 016 0zm-6 6a3 3 0 11-6 0 3 3 0 016 0zm11 0a3 3 0 11-6 0 3 3 0 016 0z"
+            fill-rule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+            clip-rule="evenodd"
           ></path>
         </svg>
-        <div>
-          <h3 class="text-xl font-semibold text-xfood-gray-dark mb-2">
-            Equipe Especializada e Acompanhamento Próximo
-          </h3>
-
-          <p class="text-xfood-gray-medium">
-            Contamos com especialistas como Adriano Lima, garantindo suporte e
-            recomendações personalizadas.
-          </p>
-        </div>
+        <span>Sem Compromisso</span>
+      </div>
+      <div class="flex items-center space-x-2">
+        <svg
+          class="w-5 h-5 text-xfood-green"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+        <span>Resultados Garantidos</span>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="py-16 bg-xfood-off-white text-center">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold text-xfood-gray-dark mb-8">
-      Veja Nossos Clientes Multiplicarem Seus Resultados
-    </h2>
-    <p class="text-lg text-xfood-gray-medium max-w-3xl mx-auto mb-10">
-      Histórias reais de sucesso, com números que provam o poder da gestão
-      estratégica da XFood. Empresas como Ganash Pizzaria e Padaria viram seus
-      números crescerem exponencialmente com nossa consultoria.
-    </p>
-    <a
-      routerLink="/resultados"
-      class="bg-xfood-orange hover:bg-xfood-red-vibrant text-xfood-white-pure text-lg font-bold px-8 py-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105"
-    >
-      Conheça Nossos Cases de Sucesso
-    </a>
-  </div>
-</section>
-
-<section class="py-16 bg-xfood-red-medium text-xfood-white-pure text-center">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold mb-6">
-      Pronto para Transformar seu Delivery?
-    </h2>
-    <p class="text-lg max-w-2xl mx-auto mb-8">
-      Não deixe seu negócio no iFood ao acaso. Conte com a XFood para alcançar
-      seu máximo potencial de vendas e lucro.
-    </p>
-    <a
-      routerLink="/contato"
-      class="bg-xfood-gray-dark hover:bg-xfood-gray-medium text-xfood-white-pure text-xl font-bold px-10 py-5 rounded-full shadow-xl transition-all duration-300 transform hover:scale-105"
-    >
-      Quero Aumentar Meu Faturamento!
-    </a>
   </div>
 </section>

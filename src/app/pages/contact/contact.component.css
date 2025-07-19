@@ -1,0 +1,263 @@
+/* Animações personalizadas */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(220, 38, 38, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(220, 38, 38, 0.5); }
+}
+
+/* Estilo para inputs com foco aprimorado */
+.group:focus-within input,
+.group:focus-within textarea {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(185, 28, 28, 0.15);
+}
+
+/* Efeito de hover nos cards de contato */
+.group:hover {
+  transform: translateY(-2px);
+}
+
+/* Animação para o botão de submit */
+button[type="submit"]:not(:disabled) {
+  animation: glow 2s infinite;
+}
+
+button[type="submit"]:hover:not(:disabled) {
+  background-size: 200% 200%;
+  animation: gradient-shift 1.5s ease infinite;
+}
+
+/* Efeito parallax sutil nos backgrounds */
+.animate-pulse {
+  animation: pulse-slow 4s ease-in-out infinite;
+}
+
+/* Melhorias na responsividade */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Ajuste do grid em telas menores */
+  .xl\:col-span-3,
+  .xl\:col-span-2 {
+    grid-column: span 1;
+  }
+  
+  /* Reduzir tamanhos de fonte em mobile */
+  h1 {
+    font-size: 2.5rem !important;
+  }
+  
+  .text-xl {
+    font-size: 1.1rem;
+  }
+  
+  .text-2xl {
+    font-size: 1.4rem;
+  }
+}
+
+/* Estilo para elementos sticky aprimorado */
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+/* Animação de entrada para os elementos */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.group,
+.bg-gradient-to-br {
+  animation: slideInUp 0.6s ease-out;
+}
+
+.group:nth-child(2) { animation-delay: 0.1s; }
+.group:nth-child(3) { animation-delay: 0.2s; }
+.group:nth-child(4) { animation-delay: 0.3s; }
+
+/* Melhorias para o mapa */
+iframe {
+  transition: filter 0.3s ease;
+}
+
+iframe:hover {
+  filter: grayscale(50%) invert(90%) contrast(110%) !important;
+}
+
+/* Efeito de loading para o formulário */
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  border-top: 2px solid #ffffff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Estilo para mensagens de erro aprimoradas */
+.text-xfood-red-light {
+  animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+/* Gradiente animado para textos */
+.bg-clip-text {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+/* Efeito de hover para links */
+a {
+  position: relative;
+  overflow: hidden;
+}
+
+a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #EF4444, transparent);
+  transition: left 0.5s;
+}
+
+a:hover::before {
+  left: 100%;
+}
+
+/* Melhorias para acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus states melhorados para acessibilidade */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #EF4444;
+  outline-offset: 2px;
+}
+
+/* Estilo para placeholders */
+input::placeholder,
+textarea::placeholder {
+  font-style: italic;
+  transition: opacity 0.3s ease;
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+  opacity: 0.3;
+}
+
+/* Animação para ícones */
+svg {
+  transition: all 0.3s ease;
+}
+
+.group:hover svg {
+  transform: scale(1.1);
+}
+
+/* Efeito de glass morphism aprimorado */
+.backdrop-blur-xl {
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+/* Sombras personalizadas */
+.shadow-2xl {
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+/* Animação de entrada para a página */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Efeito de hover para cards */
+.group:hover,
+.bg-gradient-to-br:hover {
+  transform: translateY(-5px) scale(1.01);
+  transition: all 0.3s ease;
+}
+
+/* Customização da scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #101010;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #B91C1C, #EF4444);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #DC2626, #F97316);
+}
