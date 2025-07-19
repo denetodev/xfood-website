@@ -11,7 +11,6 @@ export const routes: Routes = [
   { path: 'solucoes', component: SolutionsComponent },
   { path: 'resultados', component: ResultsComponent },
   { path: 'quem-somos', component: AboutComponent },
-  { path: 'blog', component: BlogComponent },
   { path: 'contato', component: ContactComponent },
   { path: '**', redirectTo: '' }, // Rota curinga para redirecionar para home
 ];

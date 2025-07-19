@@ -1,9 +1,10 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router'; // Se precisar de routerLink dentro da home
 
 @Component({
   selector: 'app-home',
+  standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
